@@ -112,6 +112,21 @@ const TABS: Tab[] = [
         ],
         featured: true,
       },
+      {
+        name: "Lavado de Motor",
+        price: null,
+        priceLabel: "A presupuestar",
+        includes: ["Limpieza profunda del motor", "Desengrasado completo"],
+      },
+      {
+        name: "Guante Blanco",
+        price: null,
+        priceLabel: "A presupuestar",
+        includes: [
+          "Detailing completo personalizado",
+          "Tratamiento integral del vehículo",
+        ],
+      },
     ],
   },
   {
@@ -132,6 +147,20 @@ const TABS: Tab[] = [
         name: "Lavado Detallado",
         price: 9000,
         includes: [
+          "Hidrolavado completo",
+          "Desengrase de motor y transmisión",
+          "Limpieza de llantas",
+          "Acondicionado de cubiertas",
+          "Encerado",
+          "Acondicionado de plásticos",
+        ],
+      },
+      {
+        name: "Servicio VIP",
+        price: 15000,
+        includes: [
+          "Lavado de chasis (estructura y bastidor completo)",
+          "Tratamiento de plásticos (acondicionado y protección UV)",
           "Hidrolavado completo",
           "Desengrase de motor y transmisión",
           "Limpieza de llantas",
