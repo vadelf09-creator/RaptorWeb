@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raptor Dark Gold — Manual de Identidad Visual</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal-deep:   #0D3B4F;
+    --teal-mid:    #1A5570;
+    --teal-light:  #2E7A96;
+    --gold-main:   #C8922A;
+    --gold-light:  #E8B04A;
+    --gold-pale:   #F5EFD8;
+    --black:       #080E12;
+    --off-black:   #111D24;
+    --white:       #FFFFFF;
+    --text-muted:  #8AA8B5;
+    --border:      rgba(200,146,42,.18);
+    --border-hard: rgba(200,146,42,.38);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--gold-pale);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* COVER */
+  .cover {
+    min-height: 100vh;
+    background: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(200,146,42,.04) 60px),
+      repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(200,146,42,.04) 60px);
+  }
+  .cover-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .25em;
+    color: var(--gold-main);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .cover-logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 14vw, 120px);
+    line-height: .92;
+    letter-spacing: .04em;
+    color: var(--gold-pale);
+    position: relative;
+  }
+  .cover-logo-text span {
+    display: block;
+    color: var(--gold-main);
+    font-size: clamp(28px, 6vw, 52px);
+    letter-spacing: .18em;
+  }
+  .cover-sub {
+    margin-top: 32px;
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: .08em;
+    font-family: 'DM Mono', monospace;
+    position: relative;
+  }
+  .cover-line {
+    width: 1px;
+    height: 60px;
+    background: var(--gold-main);
+    margin: 32px auto 0;
+    opacity: .5;
+  }
+  .paw-decor {
+    position: absolute;
+    font-size: 180px;
+    opacity: .03;
+    color: var(--gold-main);
+    font-family: 'Bebas Neue', sans-serif;
+    pointer-events: none;
+    user-select: none;
+  }
+  .paw-decor.tl { top: -20px; left: -20px; }
+  .paw-decor.br { bottom: -20px; right: -20px; }
+
+  /* LAYOUT */
+  .page { max-width: 860px; margin: 0 auto; padding: 80px 40px; }
+  .section { margin-bottom: 80px; }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .3em;
+    color: var(--gold-main);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-hard);
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 6vw, 56px);
+    letter-spacing: .04em;
+    color: var(--gold-pale);
+    line-height: 1;
+    margin-bottom: 32px;
+  }
+  .section-intro {
+    font-size: 15px;
+    color: var(--text-muted);
+    max-width: 580px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+  }
+
+  /* PALETTE */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  }
+  .swatch-card {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 0.5px solid var(--border-hard);
+  }
+  .swatch-color {
+    height: 100px;
+    position: relative;
+  }
+  .swatch-role {
+    position: absolute;
+    bottom: 8px; left: 10px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .12em;
+    padding: 3px 7px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  .swatch-info {
+    background: var(--off-black);
+    padding: 10px 12px;
+  }
+  .swatch-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gold-pale);
+    margin-bottom: 2px;
+  }
+  .swatch-hex {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  /* TYPOGRAPHY */
+  .type-specimen {
+    border: 0.5px solid var(--border-hard);
+    border-radius: 10px;
+    padding: 28px 32px;
+    margin-bottom: 16px;
+    background: var(--off-black);
+  }
+  .type-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .type-display {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    letter-spacing: .06em;
+    color: var(--gold-pale);
+    line-height: 1;
+  }
+  .type-body-sample {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    color: var(--gold-pale);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+  .type-mono-sample {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--gold-main);
+    letter-spacing: .08em;
+  }
+  .type-use-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+  .type-use-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 0.5px solid var(--border-hard);
+    color: var(--gold-main);
+    letter-spacing: .08em;
+  }
+
+  /* HIERARCHY */
+  .hierarchy-row {
+    padding: 16px 0;
+    border-bottom: 0.5px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+  }
+  .hierarchy-row:last-child { border-bottom: none; }
+  .hier-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    width: 130px;
+    flex-shrink: 0;
+    letter-spacing: .1em;
+  }
+
+  /* LOGO USAGE */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .logo-panel {
+    border-radius: 10px;
+    padding: 36px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+    border: 0.5px solid var(--border-hard);
+    position: relative;
+  }
+  .logo-panel-label {
+    position: absolute;
+    top: 10px; left: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--text-muted);
+    letter-spacing: .15em;
+    text-transform: uppercase;
+  }
+  .logo-text-mock {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: .08em;
+    line-height: 1;
+  }
+  .logo-text-mock .main { font-size: 36px; }
+  .logo-text-mock .sub {
+    font-size: 16px;
+    letter-spacing: .2em;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+  }
+  .wrong-tag {
+    position: absolute;
+    top: 10px; right: 12px;
+    background: rgba(227,75,74,.2);
+    border: 0.5px solid rgba(227,75,74,.5);
+    color: #E24B4A;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    letter-spacing: .1em;
+  }
+  .ok-tag {
+    position: absolute;
+    top: 10px; right: 12px;
+    background: rgba(29,158,117,.15);
+    border: 0.5px solid rgba(29,158,117,.4);
+    color: #5DCAA5;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    letter-spacing: .1em;
+  }
+  .wrong-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    border: 2px solid rgba(227,75,74,.4);
+    pointer-events: none;
+  }
+  .wrong-x {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  .wrong-x::before, .wrong-x::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: rgba(227,75,74,.3);
+  }
+  .wrong-x::before { transform: rotate(12deg); }
+  .wrong-x::after { transform: rotate(-12deg); }
+
+  /* CONTENT RULES */
+  .rule-card {
+    border: 0.5px solid var(--border-hard);
+    border-radius: 10px;
+    padding: 24px 28px;
+    background: var(--off-black);
+    margin-bottom: 12px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .rule-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+  .rule-icon.ok { background: rgba(29,158,117,.15); }
+  .rule-icon.no { background: rgba(227,75,74,.12); }
+  .rule-head {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gold-pale);
+    margin-bottom: 4px;
+  }
+  .rule-body {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* COMPOSITION */
+  .flyer-mock {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 0.5px solid var(--border-hard);
+    aspect-ratio: 9/16;
+    max-width: 240px;
+    display: flex;
+    flex-direction: column;
+  }
+  .mock-grid { display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap; }
+  .mock-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  /* SPACING SCALE */
+  .spacing-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .spacing-row:last-child { border-bottom: none; }
+  .spacing-bar-wrap { flex: 1; }
+  .spacing-bar {
+    height: 4px;
+    background: var(--gold-main);
+    border-radius: 2px;
+    opacity: .7;
+  }
+  .spacing-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    width: 80px;
+  }
+  .spacing-use {
+    font-size: 12px;
+    color: var(--gold-pale);
+    width: 200px;
+  }
+
+  /* VOICE */
+  .voice-card {
+    border-left: 2px solid var(--gold-main);
+    padding: 14px 20px;
+    background: var(--off-black);
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 10px;
+  }
+  .voice-bad {
+    border-left: 2px solid rgba(227,75,74,.6);
+    padding: 14px 20px;
+    background: rgba(227,75,74,.05);
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 10px;
+  }
+  .voice-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .voice-label.ok { color: #5DCAA5; }
+  .voice-label.no { color: #E24B4A; }
+  .voice-text { font-size: 14px; color: var(--gold-pale); line-height: 1.5; }
+
+  /* FOOTER */
+  footer {
+    border-top: 0.5px solid var(--border-hard);
+    padding: 40px;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: .1em;
+    color: var(--gold-main);
+  }
+  .footer-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: .15em;
+    margin-top: 6px;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(8,14,18,.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 0.5px solid var(--border-hard);
+    z-index: 100;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    height: 52px;
+  }
+  nav .nav-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: .1em;
+    color: var(--gold-main);
+    margin-right: auto;
+  }
+  nav a {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: 0 14px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    transition: color .2s;
+    border-bottom: 2px solid transparent;
+  }
+  nav a:hover { color: var(--gold-main); border-bottom-color: var(--gold-main); }
+
+  /* PRINT NOTE */
+  .print-banner {
+    background: var(--teal-deep);
+    border: 0.5px solid var(--border-hard);
+    border-radius: 8px;
+    padding: 14px 20px;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .print-banner strong { color: var(--gold-main); }
+
+  @media (max-width: 600px) {
+    .page { padding: 60px 20px; }
+    nav a { display: none; }
+    .logo-grid { grid-template-columns: 1fr; }
+    .palette-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media print {
+    nav { display: none; }
+    .cover { min-height: auto; padding: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">Raptor</span>
+  <a href="#paleta">Paleta</a>
+  <a href="#tipografia">Tipografía</a>
+  <a href="#logo">Logo</a>
+  <a href="#reglas">Reglas</a>
+  <a href="#voz">Voz</a>
+</nav>
+
+<!-- COVER -->
+<div class="cover">
+  <span class="paw-decor tl">R</span>
+  <span class="paw-decor br">R</span>
+  <p class="cover-eyebrow">Manual de Identidad Visual — v1.0</p>
+  <h1 class="cover-logo-text">
+    RAPTOR
+    <span>CAR WASH</span>
+  </h1>
+  <p class="cover-sub">Sistema Dark Gold · La Rioja · 2025</p>
+  <div class="cover-line"></div>
+</div>
+
+<div class="page">
+
+  <!-- INTRO BANNER -->
+  <div class="print-banner">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink:0"><circle cx="10" cy="10" r="9" stroke="#C8922A" stroke-width="1"/><path d="M10 6v4M10 13v1" stroke="#C8922A" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <span>Este manual define el sistema visual de <strong>Raptor Carwash</strong>. Toda pieza gráfica — flyer, historia, cartel, tarjeta — debe respetar estas reglas para construir una marca coherente y premium.</span>
+  </div>
+
+  <!-- 01 PALETA -->
+  <div class="section" id="paleta">
+    <p class="section-label">01</p>
+    <h2 class="section-title">Paleta de color</h2>
+    <p class="section-intro">Cuatro colores estructurales y dos de acento. No se admiten colores fuera de este sistema — incluyendo el rojo que se usaba anteriormente.</p>
+
+    <div class="palette-grid">
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#0D3B4F;">
+          <span class="swatch-role" style="background:rgba(0,0,0,.4);color:#C8922A;">Principal</span>
+        </div>
+        <div class="swatch-info">
+          <p class="swatch-name">Teal Profundo</p>
+          <p class="swatch-hex">#0D3B4F</p>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#C8922A;">
+          <span class="swatch-role" style="background:rgba(0,0,0,.3);color:#0D3B4F;">Acento</span>
+        </div>
+        <div class="swatch-info">
+          <p class="swatch-name">Dorado Raptor</p>
+          <p class="swatch-hex">#C8922A</p>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#F5EFD8;">
+          <span class="swatch-role" style="background:rgba(0,0,0,.12);color:#0D3B4F;">Texto</span>
+        </div>
+        <div class="swatch-info">
+          <p class="swatch-name">Crema</p>
+          <p class="swatch-hex">#F5EFD8</p>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#080E12;">
+          <span class="swatch-role" style="background:rgba(255,255,255,.08);color:#C8922A;">Base</span>
+        </div>
+        <div class="swatch-info">
+          <p class="swatch-name">Negro Carbón</p>
+          <p class="swatch-hex">#080E12</p>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#E8B04A;">
+          <span class="swatch-role" style="background:rgba(0,0,0,.2);color:#0D3B4F;">Variante</span>
+        </div>
+        <div class="swatch-info">
+          <p class="swatch-name">Dorado Claro</p>
+          <p class="swatch-hex">#E8B04A</p>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#8AA8B5;">
+          <span class="swatch-role" style="background:rgba(0,0,0,.2);color:#080E12;">Apoyo</span>
+        </div>
+        <div class="swatch-info">
+          <p class="swatch-name">Teal Silenciado</p>
+          <p class="swatch-hex">#8AA8B5</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:28px;border:0.5px solid var(--border-hard);border-radius:10px;padding:24px 28px;background:var(--off-black);">
+      <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--gold-main);text-transform:uppercase;margin-bottom:16px;">Proporciones de uso</p>
+      <div class="spacing-row">
+        <span class="spacing-meta">Teal profundo</span>
+        <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:60%;background:#0D3B4F;opacity:1;height:10px;"></div></div>
+        <span class="spacing-use">60% — fondos, contenedores</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-meta">Negro carbón</span>
+        <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:20%;background:#080E12;opacity:1;height:10px;border:1px solid #333;"></div></div>
+        <span class="spacing-use">20% — fondos oscuros</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-meta">Dorado Raptor</span>
+        <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:12%;background:#C8922A;opacity:1;height:10px;"></div></div>
+        <span class="spacing-use">12% — acentos, CTA, iconos</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-meta">Crema</span>
+        <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:8%;background:#F5EFD8;opacity:1;height:10px;"></div></div>
+        <span class="spacing-use">8% — texto principal</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 TIPOGRAFIA -->
+  <div class="section" id="tipografia">
+    <p class="section-label">02</p>
+    <h2 class="section-title">Tipografía</h2>
+    <p class="section-intro">Tres familias con roles estrictos. No mezclar fuera de estos usos. Nunca usar tipografías de burbuja, script informal o decorativas genéricas.</p>
+
+    <div class="type-specimen">
+      <p class="type-meta">Display / Titulares — Bebas Neue</p>
+      <p class="type-display">DETAILING TÉCNICO</p>
+      <div class="type-use-row">
+        <span class="type-use-tag">Nombre del servicio</span>
+        <span class="type-use-tag">Titulares de flyer</span>
+        <span class="type-use-tag">Nombre de marca</span>
+        <span class="type-use-tag">Secciones de destaque</span>
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <p class="type-meta">Cuerpo / Descripción — DM Sans Light</p>
+      <p class="type-body-sample">Lavamos cada vehículo con los mismos procesos que usan los mejores talleres de estética del mundo. Tu auto merece más que agua y jabón.</p>
+      <div class="type-use-row">
+        <span class="type-use-tag">Descripciones de servicio</span>
+        <span class="type-use-tag">Subtítulos</span>
+        <span class="type-use-tag">Bio de Instagram</span>
+        <span class="type-use-tag">Texto de stories</span>
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <p class="type-meta">Técnica / Datos — DM Mono</p>
+      <p class="type-mono-sample">DILUCIÓN K20 · 1:10 · APC INTERIOR · 3804 889036</p>
+      <div class="type-use-row">
+        <span class="type-use-tag">Teléfono / contacto</span>
+        <span class="type-use-tag">Datos técnicos</span>
+        <span class="type-use-tag">Precios</span>
+        <span class="type-use-tag">Etiquetas internas</span>
+      </div>
+    </div>
+
+    <div style="border:0.5px solid var(--border-hard);border-radius:10px;padding:24px 28px;background:var(--off-black);margin-top:4px;">
+      <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--gold-main);text-transform:uppercase;margin-bottom:20px;">Jerarquía tipográfica</p>
+      <div class="hierarchy-row">
+        <span class="hier-label">H1 · Titular</span>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--gold-pale);line-height:1;letter-spacing:.04em;">Servicio Elite</span>
+      </div>
+      <div class="hierarchy-row">
+        <span class="hier-label">H2 · Subtítulo</span>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--gold-main);letter-spacing:.04em;">Detallado interior profundo</span>
+      </div>
+      <div class="hierarchy-row">
+        <span class="hier-label">Body · Descripción</span>
+        <span style="font-family:'DM Sans',sans-serif;font-weight:300;font-size:14px;color:var(--gold-pale);">Incluye extracción y limpieza de tapizados con inyectora profesional.</span>
+      </div>
+      <div class="hierarchy-row">
+        <span class="hier-label">Mono · Datos</span>
+        <span style="font-family:'DM Mono',monospace;font-size:12px;color:var(--gold-main);letter-spacing:.08em;">TURNO · 3804 889036</span>
+      </div>
+      <div class="hierarchy-row">
+        <span class="hier-label">Caption · Apoyo</span>
+        <span style="font-family:'DM Sans',sans-serif;font-weight:300;font-size:11px;color:#8AA8B5;">@raptor_carwash · Zona Sur, La Rioja</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 LOGO -->
+  <div class="section" id="logo">
+    <p class="section-label">03</p>
+    <h2 class="section-title">Uso del logo</h2>
+    <p class="section-intro">El raptor sobre negro y dorado es la versión maestra. A continuación las variantes permitidas y los usos prohibidos.</p>
+
+    <div class="logo-grid">
+      <div>
+        <p class="mock-label">Versión principal — sobre negro</p>
+        <div class="logo-panel" style="background:#080E12;">
+          <span class="ok-tag">OK</span>
+          <div class="logo-text-mock" style="text-align:center;">
+            <div class="main" style="color:#C8922A;">RAPTOR</div>
+            <div class="sub" style="color:#F5EFD8;">CAR WASH</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="mock-label">Versión secundaria — sobre teal</p>
+        <div class="logo-panel" style="background:#0D3B4F;">
+          <span class="ok-tag">OK</span>
+          <div class="logo-text-mock" style="text-align:center;">
+            <div class="main" style="color:#C8922A;">RAPTOR</div>
+            <div class="sub" style="color:#F5EFD8;">CAR WASH</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="mock-label">Versión negativa — sobre crema</p>
+        <div class="logo-panel" style="background:#F5EFD8;">
+          <span class="ok-tag">OK</span>
+          <div class="logo-text-mock" style="text-align:center;">
+            <div class="main" style="color:#0D3B4F;">RAPTOR</div>
+            <div class="sub" style="color:#080E12;">CAR WASH</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="mock-label">Prohibido — sobre rojo</p>
+        <div class="logo-panel" style="background:#CC1F1F;">
+          <span class="wrong-tag">NO</span>
+          <div class="wrong-overlay"></div>
+          <div class="wrong-x"></div>
+          <div class="logo-text-mock" style="text-align:center;opacity:.4;">
+            <div class="main" style="color:#fff;">RAPTOR</div>
+            <div class="sub" style="color:#fff;">CAR WASH</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="mock-label">Prohibido — sobre blanco puro</p>
+        <div class="logo-panel" style="background:#ffffff;">
+          <span class="wrong-tag">NO</span>
+          <div class="wrong-overlay"></div>
+          <div class="wrong-x"></div>
+          <div class="logo-text-mock" style="text-align:center;opacity:.4;">
+            <div class="main" style="color:#ccc;">RAPTOR</div>
+            <div class="sub" style="color:#aaa;">CAR WASH</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="mock-label">Prohibido — distorsionado</p>
+        <div class="logo-panel" style="background:#0D3B4F;">
+          <span class="wrong-tag">NO</span>
+          <div class="wrong-overlay"></div>
+          <div class="wrong-x"></div>
+          <div class="logo-text-mock" style="text-align:center;opacity:.4;transform:scaleX(1.4);">
+            <div class="main" style="color:#C8922A;">RAPTOR</div>
+            <div class="sub" style="color:#F5EFD8;">CAR WASH</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;border:0.5px solid var(--border-hard);border-radius:10px;padding:20px 28px;background:var(--off-black);">
+      <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--gold-main);text-transform:uppercase;margin-bottom:12px;">Zona de exclusión</p>
+      <p style="font-size:13px;color:var(--text-muted);line-height:1.7;">El logo debe tener un espacio libre equivalente a la altura de la letra "R" en todos sus lados. No se puede colocar texto, íconos ni decoraciones dentro de esa zona.</p>
+    </div>
+  </div>
+
+  <!-- 04 REGLAS -->
+  <div class="section" id="reglas">
+    <p class="section-label">04</p>
+    <h2 class="section-title">Reglas de composición</h2>
+    <p class="section-intro">Cómo se construye cada pieza gráfica. Estas reglas aplican a stories, posts de feed, flyers, carteles y cualquier material visual de Raptor.</p>
+
+    <div class="rule-card">
+      <div class="rule-icon ok">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4.5 4.5L15 5" stroke="#5DCAA5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="rule-head">Siempre fondo oscuro como base</p>
+        <p class="rule-body">El teal profundo (#0D3B4F) o el negro carbón (#080E12) van de fondo. El dorado y el crema flotan sobre ellos. Nunca al revés como base de una pieza completa.</p>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon ok">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4.5 4.5L15 5" stroke="#5DCAA5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="rule-head">El dorado es escaso y deliberado</p>
+        <p class="rule-body">Se usa en: el nombre del servicio, el botón de acción ("Reservar turno"), el precio y el logo. No se aplica a párrafos enteros ni a fondos grandes. Su poder viene de la escasez.</p>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon ok">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4.5 4.5L15 5" stroke="#5DCAA5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="rule-head">Los precios van en DM Mono, sin estrella</p>
+        <p class="rule-body">El precio es una dato técnico, no una oferta de mercado. Va en tipografía monoespaciada, en dorado, sin estrellas ni badges rojos. Ejemplo correcto: <span style="font-family:'DM Mono',monospace;color:#C8922A;">$50.000</span> — solo eso.</p>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon ok">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4.5 4.5L15 5" stroke="#5DCAA5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="rule-head">Las fotos reales tienen prioridad sobre el texto</p>
+        <p class="rule-body">Un antes/después bien fotografiado no necesita texto enorme. El título de servicio va en Bebas Neue pequeño sobre la foto. La imagen hace el trabajo de venta.</p>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon no">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 5l8 8M13 5l-8 8" stroke="#E24B4A" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <p class="rule-head">Prohibido: rojo en cualquier pieza</p>
+        <p class="rule-body">El rojo (#CC1F1F) está eliminado del sistema. No en fondos, no en texto, no en badges, no en bordes. El rojo es agresivo y genérico — lo usa cualquier taller de la esquina.</p>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon no">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 5l8 8M13 5l-8 8" stroke="#E24B4A" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <p class="rule-head">Prohibido: tipografía burbuja o informal</p>
+        <p class="rule-body">Fuentes redondeadas, escritas a mano o decorativas están fuera del sistema. Incluye cualquier fuente que no sea Bebas Neue, DM Sans o DM Mono.</p>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon no">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 5l8 8M13 5l-8 8" stroke="#E24B4A" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <p class="rule-head">Prohibido: fotos de fondo desenfocado del taller sin limpiar</p>
+        <p class="rule-body">Las fotos de contexto deben mostrar vehículos terminados, procesos en acción o productos ordenados. El taller en desorden como fondo daña la percepción de profesionalismo.</p>
+      </div>
+    </div>
+
+    <!-- Estructura de flyer -->
+    <div style="margin-top:36px;">
+      <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--gold-main);text-transform:uppercase;margin-bottom:20px;">Estructura de historia (9:16)</p>
+      <div class="mock-grid">
+        <div>
+          <div class="flyer-mock" style="background:#0D3B4F;">
+            <div style="flex:1;padding:20px 16px 0;display:flex;flex-direction:column;justify-content:flex-start;">
+              <div style="font-family:'DM Mono',monospace;font-size:8px;color:#C8922A;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;">Raptor Car Wash</div>
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:30px;color:#F5EFD8;line-height:1.05;letter-spacing:.04em;margin-bottom:6px;">SERVICIO<br>ELITE DETAIL</div>
+              <div style="font-size:9px;color:#8AA8B5;line-height:1.5;margin-bottom:12px;">Detallado interior + tapizados<br>con inyectora profesional.</div>
+              <div style="width:32px;height:1px;background:#C8922A;margin-bottom:12px;opacity:.6;"></div>
+              <div style="font-size:9px;color:#8AA8B5;line-height:1.6;">
+                · Extracción profunda<br>
+                · Descontaminación química<br>
+                · Acondicionado de plásticos<br>
+                · Cera de protección
+              </div>
+            </div>
+            <div style="padding:14px 16px;background:rgba(0,0,0,.3);display:flex;justify-content:space-between;align-items:center;">
+              <div>
+                <div style="font-family:'DM Mono',monospace;font-size:11px;color:#C8922A;">$50.000</div>
+                <div style="font-size:8px;color:#8AA8B5;">Turno previo</div>
+              </div>
+              <div style="background:#C8922A;border-radius:4px;padding:6px 10px;">
+                <div style="font-family:'DM Sans',sans-serif;font-size:8px;font-weight:500;color:#0D3B4F;letter-spacing:.05em;">RESERVAR</div>
+              </div>
+            </div>
+          </div>
+          <p style="font-family:'DM Mono',monospace;font-size:9px;color:#5DCAA5;letter-spacing:.1em;margin-top:8px;text-transform:uppercase;">Correcto</p>
+        </div>
+        <div>
+          <div class="flyer-mock" style="background:#CC1F1F;">
+            <div style="flex:1;padding:20px 16px 0;">
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:#fff;line-height:1;margin-bottom:10px;">SERVICIO<br>PREMIUM</div>
+              <div style="font-size:10px;color:rgba(255,255,255,.7);margin-bottom:16px;">· Detallado exterior<br>· Detallado interior<br>· Lavado de butacas</div>
+            </div>
+            <div style="padding:14px 16px;background:rgba(0,0,0,.2);">
+              <div style="background:#fff;border-radius:20px;padding:8px;text-align:center;">
+                <div style="font-size:18px;font-weight:700;color:#CC1F1F;">$50.000</div>
+              </div>
+            </div>
+            <div class="wrong-overlay" style="border-radius:10px;"></div>
+            <div class="wrong-x"></div>
+          </div>
+          <p style="font-family:'DM Mono',monospace;font-size:9px;color:#E24B4A;letter-spacing:.1em;margin-top:8px;text-transform:uppercase;">Incorrecto</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 VOZ -->
+  <div class="section" id="voz">
+    <p class="section-label">05</p>
+    <h2 class="section-title">Voz de marca</h2>
+    <p class="section-intro">Cómo habla Raptor. El tono define si el cliente te percibe como un lavadero de barrio o como un taller boutique de estética vehicular.</p>
+
+    <div style="margin-bottom:28px;">
+      <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--gold-main);text-transform:uppercase;margin-bottom:16px;">Los 3 rasgos de voz</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+        <div style="border:0.5px solid var(--border-hard);border-radius:8px;padding:18px 20px;background:var(--off-black);">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#C8922A;letter-spacing:.06em;margin-bottom:6px;">TÉCNICO</p>
+          <p style="font-size:13px;color:var(--text-muted);line-height:1.6;">Nombrar los procesos por su nombre real. "Descontaminación química" en vez de "limpieza profunda".</p>
+        </div>
+        <div style="border:0.5px solid var(--border-hard);border-radius:8px;padding:18px 20px;background:var(--off-black);">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#C8922A;letter-spacing:.06em;margin-bottom:6px;">CONFIADO</p>
+          <p style="font-size:13px;color:var(--text-muted);line-height:1.6;">No pedir disculpas por el precio. No usar "económico" ni "accesible". El precio refleja el valor del trabajo.</p>
+        </div>
+        <div style="border:0.5px solid var(--border-hard);border-radius:8px;padding:18px 20px;background:var(--off-black);">
+          <p style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#C8922A;letter-spacing:.06em;margin-bottom:6px;">CERCANO</p>
+          <p style="font-size:13px;color:var(--text-muted);line-height:1.6;">Sin distancia ni frialdad de lujo europeo. Somos de La Rioja, hablamos con la gente de La Rioja. Cálido y profesional.</p>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--gold-main);text-transform:uppercase;margin-bottom:14px;">Ejemplos concretos</p>
+
+    <div class="voice-card">
+      <p class="voice-label ok">Correcto</p>
+      <p class="voice-text">"Extracción y descontaminación de tapizados con inyectora profesional. Tu auto queda como salió de fábrica."</p>
+    </div>
+    <div class="voice-bad">
+      <p class="voice-label no">Incorrecto</p>
+      <p class="voice-text">"¡Su moto como nueva! Lavado tradicional, detallado y VIP a los mejores precios."</p>
+    </div>
+
+    <div class="voice-card" style="margin-top:10px;">
+      <p class="voice-label ok">Correcto</p>
+      <p class="voice-text">"Trabajamos con turno. Cada vehículo tiene el tiempo que necesita, no el tiempo que sobra."</p>
+    </div>
+    <div class="voice-bad">
+      <p class="voice-label no">Incorrecto</p>
+      <p class="voice-text">"¡Domingo full descanso? ¡Lavamos a domicilio! Agendá tu turno."</p>
+    </div>
+
+    <div class="voice-card" style="margin-top:10px;">
+      <p class="voice-label ok">Correcto</p>
+      <p class="voice-text">"Usamos APC diluido 1:10 en interiores. El producto hace el trabajo; la microfibra lo termina."</p>
+    </div>
+    <div class="voice-bad">
+      <p class="voice-label no">Incorrecto</p>
+      <p class="voice-text">"¡Oferta semanal! Tapicería + lavado $30.000 (antes $40.000) ¡No te lo pierdas!"</p>
+    </div>
+
+    <div style="margin-top:28px;border:0.5px solid var(--border-hard);border-radius:10px;padding:22px 28px;background:var(--off-black);">
+      <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--gold-main);text-transform:uppercase;margin-bottom:14px;">Palabras permitidas</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border:0.5px solid var(--border-hard);border-radius:4px;color:#F5EFD8;">descontaminación</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border:0.5px solid var(--border-hard);border-radius:4px;color:#F5EFD8;">detailing</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border:0.5px solid var(--border-hard);border-radius:4px;color:#F5EFD8;">extracción</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border:0.5px solid var(--border-hard);border-radius:4px;color:#F5EFD8;">técnico</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border:0.5px solid var(--border-hard);border-radius:4px;color:#F5EFD8;">protección</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border:0.5px solid var(--border-hard);border-radius:4px;color:#F5EFD8;">proceso</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border:0.5px solid var(--border-hard);border-radius:4px;color:#F5EFD8;">turno</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border:0.5px solid var(--border-hard);border-radius:4px;color:#F5EFD8;">cuidado</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border:0.5px solid var(--border-hard);border-radius:4px;color:#F5EFD8;">profesional</span>
+      </div>
+      <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;color:#E24B4A;text-transform:uppercase;margin:18px 0 10px;">Palabras prohibidas</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border:0.5px solid rgba(227,75,74,.3);border-radius:4px;color:#E24B4A;background:rgba(227,75,74,.06);">oferta</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border:0.5px solid rgba(227,75,74,.3);border-radius:4px;color:#E24B4A;background:rgba(227,75,74,.06);">económico</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border:0.5px solid rgba(227,75,74,.3);border-radius:4px;color:#E24B4A;background:rgba(227,75,74,.06);">precio</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border:0.5px solid rgba(227,75,74,.3);border-radius:4px;color:#E24B4A;background:rgba(227,75,74,.06);">barato</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border:0.5px solid rgba(227,75,74,.3);border-radius:4px;color:#E24B4A;background:rgba(227,75,74,.06);">¡no te lo pierdas!</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border:0.5px solid rgba(227,75,74,.3);border-radius:4px;color:#E24B4A;background:rgba(227,75,74,.06);">full</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border:0.5px solid rgba(227,75,74,.3);border-radius:4px;color:#E24B4A;background:rgba(227,75,74,.06);">super</span>
+        <span style="font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border:0.5px solid rgba(227,75,74,.3);border-radius:4px;color:#E24B4A;background:rgba(227,75,74,.06);">¡¡!</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p class="footer-logo">RAPTOR CAR WASH</p>
+  <p class="footer-sub">Manual de Identidad Visual — Sistema Dark Gold · v1.0 · 2025</p>
+  <p style="font-family:'DM Mono',monospace;font-size:10px;color:#3a5560;margin-top:10px;letter-spacing:.1em;">Uso interno — no distribuir</p>
+</footer>
+
+</body>
+</html>
