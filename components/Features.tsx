@@ -57,8 +57,7 @@ export default function Features() {
               </h2>
             </div>
             <p className="font-body font-light text-[#8AA8B5] text-sm max-w-xs leading-relaxed">
-              Más de 4 años de experiencia nos respaldan. Cada vehículo que
-              entra, sale transformado.
+              Cada vehículo que entra, sale transformado.
             </p>
           </div>
         </ScrollReveal>

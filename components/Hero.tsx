@@ -94,12 +94,6 @@ export default function Hero() {
                   </div>
                   <div className="font-mono text-[#8AA8B5] text-[10px] mt-1 tracking-[0.12em] uppercase">Calificación Google</div>
                 </div>
-                <div>
-                  <div className="font-display text-3xl text-[#F5EFD8] leading-none flex items-baseline gap-0.5">
-                    <NumberTicker value={4} delay={1.0} className="font-display text-3xl text-[#F5EFD8]" /> años
-                  </div>
-                  <div className="font-mono text-[#8AA8B5] text-[10px] mt-1 tracking-[0.12em] uppercase">De experiencia</div>
-                </div>
               </div>
             </BlurFade>
           </div>
