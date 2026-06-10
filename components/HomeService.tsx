@@ -105,7 +105,7 @@ export default function HomeService() {
 
             <div className="space-y-4">
               {[
-                { icon: "📍", text: "Cubrimos La Rioja y alrededores" },
+                { icon: "📍", text: "Cubrimos toda la ciudad de La Rioja" },
                 { icon: "📅", text: "Coordinamos el horario que mejor te quede" },
                 { icon: "🔧", text: "Mismo nivel de calidad que en el local" },
                 { icon: "💳", text: "Efectivo o transferencia" },
